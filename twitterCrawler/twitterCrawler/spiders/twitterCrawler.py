@@ -1,16 +1,16 @@
 import scrapy
-import json
+
 from time import strftime, gmtime
 
 class TwitterSpider(scrapy.Spider):
     name = 'twitter'
-    start_urls = [
-        'https://twitter.com/barackobama',
-    ]
+
+    def __init__(self, user):
+        self.user = user
+        self.url = f'https://twitter.com/{user}'
 
     def parse(self, response):
-        data = json.loads(response.text)
-        finally: pass
+
         for tweet in response.css('div.tweet'):
             yield {
                 'time': strftime('%d %b %Y %H:%M', gmtime(int(tweet.css('span._timestamp::attr(data-time)').extract_first()))),
