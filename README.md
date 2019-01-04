@@ -16,7 +16,7 @@ There is also a simple command that allows you to save the dataframe into csv-fi
 1. **Install**
     * `git clone https://github.com/itiievskyi/Twitter-Scraper.git ~/twitter-scraper/`
     * `cd ~/twitter-scraper/`
-    * `pip3 install -r requirements.txt`
+    * `pip3 install -r requirements.txt` (Jupyter is included)
 
 2. **Use**
     * `jupyter notebook TwitterScraper.ipynb` or
